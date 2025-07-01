@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script lists current directory content, parsing names
+
+for file in *; do
+    if [[ -f "$file" || -d "$file" ]]; then # Check if it's a file or directory
+        if [[ "$file" != .* ]]; then # Exclude hidden files/directories
+            echo "$file" | cut -d'-' -f2-
+        fi
+    fi
+done
