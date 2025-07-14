@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script displays a confused smiley "(Ôo)'".
-echo "\"(Ôo)'"
+# This script displays a confused smiley "(Ôo)'" followed by two newlines.
+echo -e "\"(Ôo)'\n"
