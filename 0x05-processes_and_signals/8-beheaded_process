@@ -1,0 +1,8 @@
+#!/bin/bash
+# Find the PID of the '7-highlander' script
+PID=$(pgrep -f "7-highlander")
+if [ -n "$PID" ]; then
+    kill -9 "$PID" # Send SIGKILL to forcibly terminate
+else
+    echo "7-highlander process not found."
+fi
