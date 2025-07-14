@@ -1,0 +1,11 @@
+#!/bin/bash
+# Find the PID of the '4-to_infinity_and_beyond' script
+# We use pgrep to find the PID of the running script.
+# We must be careful not to kill the current script if its name contains the target name.
+# The `pgrep -f` option searches the full command line.
+PID=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -n "$PID" ]; then
+    kill "$PID"
+else
+    echo "4-to_infinity_and_beyond process not found."
+fi
