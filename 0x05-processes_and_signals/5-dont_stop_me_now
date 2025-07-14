@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Find the PID of the '4-to_infinity_and_beyond' script
 # We use pgrep to find the PID of the running script.
 # We must be careful not to kill the current script if its name contains the target name.
