@@ -1,8 +1,11 @@
-#!/bin/bash
-# This script shows the PID and command of all processes with "bash" in their name
-for pid in $(ls /proc | grep '^[0-9]' | sort -n); do
-    cmdline=$(cat /proc/"$pid"/comm 2>/dev/null)
-    if echo "$cmdline" | grep -q "bash"; then
-        echo "$pid $cmdline"
-    fi
+#!/usr/bin/env bash
+# Shows PID and name of bash processes without using ps
+
+for pid in /proc/*; do
+  [ -d "$pid" ] || continue
+  p=$(basename "$pid")
+  cmd=$(basename "$(readlink /proc/$p/exe 2>/dev/null)" || true)
+  if [ "$cmd" = "bash" ]; then
+    echo "$p bash"
+  fi
 done
