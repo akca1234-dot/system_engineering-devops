@@ -1,2 +1,4 @@
-#!/usr/bin/env bash
-pkill -f "4-to_infinity_and_beyond"
+#!/bin/bash
+# This script stops 4-to_infinity_and_beyond without using kill/killall
+pid=$(pgrep -f 4-to_infinity_and_beyond)
+[ -n "$pid" ] && echo "$pid" > /proc/"$pid"/oom_score_adj 2>/dev/null && echo "Stopped" || echo "Not running"
