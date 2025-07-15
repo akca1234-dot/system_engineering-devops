@@ -1,8 +1,3 @@
-#!/usr/bin/env bash#!/bin/bash
-# Find the PID of the '7-highlander' script
-PID=$(pgrep -f "7-highlander")
-if [ -n "$PID" ]; then
-    kill -9 "$PID" # Send SIGKILL to forcibly terminate
-else
-    echo "7-highlander process not found."
-fi
+#!/bin/bash
+# This script forcefully kills 7-highlander
+pkill -9 -f 7-highlander
