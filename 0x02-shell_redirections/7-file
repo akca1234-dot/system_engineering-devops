@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # This script creates a file with a special name and writes 'Best School' to it
 
 echo "Best School" > '*\'"Best School"\'\*$\?*****:)'
