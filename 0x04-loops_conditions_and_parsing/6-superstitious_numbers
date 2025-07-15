@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script lists directory contents, showing parts after the first dash.
+
+for item in *; do
+  if [ -f "$item" ] || [ -d "$item" ]; then # Check if it's a file or directory
+    if [[ "$item" == *"-"* ]]; then # Check if the item contains a dash
+      echo "${item#*-}"
+    else
+      echo "$item" # If no dash, print the whole name
+    fi
+  fi
+done
